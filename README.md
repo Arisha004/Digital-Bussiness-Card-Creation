@@ -1,66 +1,149 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#  Cardly — Digital Business Card Creation Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Cardly is a web-based Digital Business Card creation platform that allows users to design, manage, and share interactive digital business cards. The system supports multiple cards per user, role-based access (User & Admin), downloadable cards (PNG/PDF), and an admin dashboard with analytics and user management.
 
-## About Laravel
+This project is designed as an **MVP (Minimum Viable Product)** with a clean user flow, real-world features, and scalability in mind.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##  Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+###  Public Access (No Login Required)
 
-## Learning Laravel
+* Landing page with:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  * Hero section
+  * Features
+  * Static card previews
+  * How it works
+  * Call-to-action banner
+  * Footer
+* Public pages:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  * View Templates
+  * About Us
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+###  User Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* User authentication (Signup & Login)
+* Personalized dashboard
+* Create **multiple digital business cards**
+* Edit existing cards
+* View cards with **front & back flip animation**
+* Delete cards (with confirmation modal)
+* Download cards as **PNG** and **PDF**
+* Share-ready cards for social platforms (e.g. LinkedIn via image or public link in production)
+* Status handling (Active / Deleted)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Admin Features
 
-## Contributing
+* Role-based admin access
+* Admin dashboard with analytics:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  * Total users
+  * Total cards
+  * Top 3 active users (based on card count)
+* View all registered users
+* Delete users
+* View all cards created by users
+* View individual cards with flip animation
+* Status visibility for users and cards
+* Secure admin logout
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Roles & Access Control
 
-## Security Vulnerabilities
+### Roles Implemented
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* **User**: Can create, manage, delete, and download their own cards
+* **Admin**: Can manage users, view analytics, and oversee all cards
 
-## License
+> The project is intentionally limited to User and Admin roles as part of an MVP design. Additional roles (Moderator, Support, Super Admin) can be added in future versions if required.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+##  Sharing on LinkedIn (Important Note)
+
+LinkedIn does not allow sharing `localhost` URLs.
+In production:
+
+* Each card will have a public shareable link
+* Cards can be shared directly on LinkedIn
+
+Currently:
+
+* Users can download cards as PNG and upload them to LinkedIn posts
+* LinkedIn share button logic is implemented for production-ready URLs
+
+---
+
+##  Technical Highlights
+
+* Role-based authentication
+* Session management
+* Full CRUD operations
+* Confirmation modals for destructive actions
+* Soft delete logic with status badges
+* Interactive UI with animations
+* Clean separation of public & protected routes
+
+---
+
+##  Tech Stack
+
+* **Frontend**: HTML, CSS, Bootstrap, JavaScript
+* **Backend**: PHP
+* **Database**: MySQL
+* **Server**: XAMPP (Localhost)
+* **UI Effects**: CSS animations (card flip)
+
+---
+
+##  Project Structure (High Level)
+
+```
+/public
+/auth
+/user
+/admin
+/templates
+/assets
+/database
+```
+
+---
+
+##  Project Purpose
+
+This project was built to:
+
+* Demonstrate full-stack development skills
+* Implement real-world SaaS features
+* Practice role-based systems and dashboards
+* Create an interactive and shareable digital product
+
+---
+
+##  Future Enhancements
+
+* Public card URLs
+* QR code sharing
+* Card analytics (views, clicks)
+* Additional user roles
+* Cloud hosting & deployment
+
+
+##  Author
+
+**Arisha Mumtaz**
+Front-End & Back-End Developer | UI/UX Designer
+
+
+## 📄 License
+
+This project is for learning and portfolio purposes.
+
