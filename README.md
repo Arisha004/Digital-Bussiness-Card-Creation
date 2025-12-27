@@ -140,7 +140,6 @@ This project was built to:
 ##  Author
 
 **Arisha Mumtaz**
-Front-End & Back-End Developer | UI/UX Designer
 
 
 ## 📄 License
