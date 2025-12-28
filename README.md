@@ -2,7 +2,7 @@
 
 Cardly is a web-based Digital Business Card creation platform that allows users to design, manage, and share interactive digital business cards. The system supports multiple cards per user, role-based access (User & Admin), downloadable cards (PNG/PDF), and an admin dashboard with analytics and user management.
 
-This project is designed as an **MVP (Minimum Viable Product)** with a clean user flow, real-world features, and scalability in mind.
+This project is designed with a clean user flow, real-world features, and scalability in mind.
 
 
 ##  Features
